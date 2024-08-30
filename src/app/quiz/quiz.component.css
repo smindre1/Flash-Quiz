@@ -1,0 +1,24 @@
+.startButtonSpacing {
+  margin-top: 36px;
+}
+
+.timer {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.pageButton {
+  display: flex;
+  color: var(--blizzardBlue);
+  background-color: var(--bostonBlue);
+  border-style: solid;
+  border-color: var(--blizzardBlue);
+  border-width: 5px;
+  border-radius: 15px;
+  padding: 5px;
+  justify-content: center;
+}
+
+.pageButton:hover {
+  cursor: pointer;
+}

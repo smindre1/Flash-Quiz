@@ -1,0 +1,119 @@
+header {
+  display: flex;
+  flex-direction: row;
+}
+/*font-family: 'Londrina Solid', cursive; */
+body {
+  font-family: "Londrina Solid", cursive;
+  font-weight: normal;
+  font-size: 16px;
+  background-color: var(--prussianBlue);
+}
+
+button {
+  font-size: 28px;
+  font-weight: normal;
+  color: var(--blizzardBlue);
+  background-color: var(--bostonBlue);
+  border-color: var(--lightTangerine);
+  border-width: 5px;
+  border-radius: 10px;
+  padding: 5px;
+  /* width: 100px; */
+  margin: 5px 0px 5px 0px;
+}
+
+button[disabled] {
+  cursor: default;
+  background: #c0c7cf;
+}
+
+section {
+  display: flex;
+  flex-basis: 40%;
+  border-style: solid;
+  border-color: var(--bostonBlue);
+  border-radius: 25px;
+  border-width: 16px;
+  justify-content: center;
+  vertical-align: middle;
+  flex-direction: column;
+  margin-left: 20vw;
+  margin-right: 20vw;
+  align-items: center;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--lightTangerine);
+}
+
+li {
+  font-size: 28px;
+  font-weight: 300;
+}
+
+h1,
+li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* font-weight: bold; */
+  color: var(--tangerine);
+}
+
+.pageTitle {
+  font-size: 48px;
+  margin-bottom: 5vh;
+}
+
+.question {
+  font-size: 2rem;
+}
+
+.answerChoiceButton {
+  display: flex;
+  color: white;
+  background-color: #c94fb9;
+  border-color: pink;
+  border-width: 5px;
+  border-radius: 15%;
+  padding: 5px;
+  width: 100px;
+}
+
+.hide {
+  display: none;
+}
+
+.submitForm {
+  display: flex;
+  align-items: center;
+}
+
+.defaultMessage {
+  padding: 28px;
+}
+
+.viewHighscore {
+  color: var(--blizzardBlue);
+  margin: 10px;
+  font-size: 20px;
+}
+
+input {
+  padding: 5px 0px 5px 0px;
+  margin: 0px 10px 0px 10px;
+  height: 44px;
+  font-family: "Londrina Solid", cursive;
+  font-size: 24px;
+}
+
+.homepageButtonSpacing {
+  margin-top: 36px;
+}
+
+.highscoreTable {
+  margin: 10px;
+}
