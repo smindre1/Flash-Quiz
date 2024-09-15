@@ -1,4 +1,7 @@
 import {jwtDecode} from 'jwt-decode';
+import { Injectable } from '@angular/core';
+
+@Injectable()
 
 class AuthService {
     getProfile(): any {
@@ -42,5 +45,5 @@ class AuthService {
         window.location.reload();
     }
 }
-  
-  export default new AuthService();
+
+export default new AuthService();
