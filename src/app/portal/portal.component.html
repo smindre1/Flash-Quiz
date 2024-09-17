@@ -1,27 +1,21 @@
 <form className="signupForm" autoComplete="off" (ngSubmit)="handleSubmit($event)">
-    <h2 id="signup" (click)="changeToggle('submit')">Signup</h2>
-    <h2 id="signup" (click)="changeToggle('login')">Login</h2>
+    <h2 id="signup" [ngClass]="{'highlight': toggle === 'signup'}" (click)="changeToggle('signup')">Signup</h2>
+    <h2 id="login" [ngClass]="{'highlight': toggle === 'login'}" (click)="changeToggle('login')">Login</h2>
     <div className="formDiv">
-      <div className="flexColumn formSection">
+      <div className="flexColumn formSection" *ngIf="toggle === 'signup'" >
         <input className="formFields" type="text" placeholder="Username" autoComplete="off" id="name" [(ngModel)]="name" name="name" />
-        <p className="errorTxt hide">Username cannot be blank</p>
+        <p className="errorTxt hide" *ngIf="nameError">Username cannot be blank</p>
       </div>
 
       <div className="flexColumn formSection">
         <input className="formFields" type="text" placeholder="Email" autoComplete="off" id="email" [(ngModel)]="email" name="email" />
-        <p className="errorTxt hide">Email cannot be blank</p>
-      </div>
-    </div>
-    <div className="formDiv">
-      <div className="flexColumn formSection">
-        <input className="formFields" type="tel" (keypress)="handlePhone($event)" placeholder="Phone Number" autoComplete="off" id="number" [(ngModel)]="number" name="number" />
-        <p className="errorTxt hide">Phone Number cannot be blank</p>
+        <p className="errorTxt hide" *ngIf="emailError">Email cannot be blank</p>
       </div>
     </div>
     <div className="flexColumn">
       <div className="flexColumn">
         <input className="formFields" type="text" placeholder="Password" autoComplete="off" id="password" [(ngModel)]="password" name="password" />
-        <p className="errorTxt hide">Password cannot be blank</p>
+        <p className="errorTxt hide" *ngIf="passwordError">Password cannot be blank</p>
       </div>
       <button className="formBtn" type="submit">Submit</button>
     </div>

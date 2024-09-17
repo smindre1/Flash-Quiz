@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import AuthService from '../services/auth.service';
 import { environment } from '../../environments/environment';
 
@@ -12,67 +12,45 @@ export class PortalComponent {
   nameError: boolean = false;
   email: string = '';
   emailError: boolean = false;
-  number: string = '';
-  numberError: boolean = false;
   password: string = '';
   passwordError: boolean = false;
   toggle: string = 'signup';
-  success: boolean = false
+  success: boolean = false;
 
   changeToggle(key: string): void {
     this.toggle = key;
-  }
-
-  handlePhone(event: KeyboardEvent): void {
-    if (!event) return;
-    // Resets any non-numbers that the user inputs
-    const letterRegex = /[\D]/g;
-    if (event.code.match(letterRegex)) {
-      return;
-    }
-
-    // Takes the inputted numbers and formats them into a phone number template
-    const regex = /[\d]/g;
-    var phoneNumber: RegExpMatchArray | null = this.number.match(regex);
-    let newNumber: string = phoneNumber != null ? phoneNumber.join('') : '';
-
-    const numLength = newNumber.length;
-    if (numLength < 4) {
-      this.number = newNumber;
-    }
-    if (3 < numLength && numLength < 7) {
-      this.number = `(${newNumber.slice(0, 3)}) ${newNumber.slice(3)}`;
-    }
-    if (numLength > 6) {
-      this.number = `(${newNumber.slice(0, 3)}) ${newNumber.slice(3,6)} - ${newNumber.slice(6, 10)}`;
-    }
+    console.log(this.toggle);
   }
 
   checkForm(): boolean {
     //If the input field is empty, change the input's error variable to true
     this.name.length === 0 ? this.nameError = true : null;
     this.email.length === 0 ? this.emailError = true : null;
-    this.number.length === 0 ? this.numberError = true : null;
     this.password.length === 0 ? this.passwordError = true : null;
-    //If any input has an error return false, else return true
-    if(this.nameError == true || this.emailError == true || this.numberError == true || this.passwordError == true) {
+    //If any input for signup form has an error return false, else return true
+    if(this.toggle === 'signup' && (this.nameError == true || this.emailError == true || this.passwordError == true)) {
       return false;
     } else {
-      return true;
+      //Checks if it's a login form and then checks for errors, if everything is good return true
+      if(this.toggle === 'login' && (this.emailError == true || this.passwordError == true)) {
+        return false
+      } else {
+        return true;
+      }
     }
   }
 
   handleSubmit(e: Event): void {
     e.preventDefault();
-    // const Auth = new AuthService;
     //A failed checkForm will prevent the form from submitting
     if(!this.checkForm()) {
       e.stopPropagation()
     } else {
       
-      const userFormData = { username: this.name, email: this.email, phone: this.number, password: this.password };
+      const userFormData = this.toggle === 'signup' ? { username: this.name, email: this.email, password: this.password } : { email: this.email, password: this.password };
 
-      const url = environment.DB_URL + "users/";
+      let url = environment.DB_URL + "users/";
+      this.toggle === 'login' ? url = url + 'login' : null;
       fetch(url, {
         method: 'POST',
         headers: {
@@ -100,12 +78,10 @@ export class PortalComponent {
       // Resets form after successful submission
       this.name = "";
       this.email = "";
-      this.number = "";
       this.password = "";
     }
   }
 }
 //Dev Notes:
 // - Removed Refs in html
-// Should I include phone numbers with user profiles?
 // I should send a confirmation email for them to click to confirm making the account.

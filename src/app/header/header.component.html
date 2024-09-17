@@ -1,5 +1,17 @@
-<div>
-    <a href="/Flashcard-Sets">My Sets</a>
-    <a href="/Login+Signup">Login/Signup</a>
-    <button>Sign Out</button>
+<div class="header">
+    <div class="flex-row">
+        <a class="header-link" href="/">Home</a>
+        <p *ngIf="loggedIn" >{{profile.username}}</p>
+    </div>
+
+    <a *ngIf="!loggedIn" class="header-link" href="/login%2Bsignup">Login/Signup</a>
+    <div *ngIf="loggedIn" class="dropdown">
+        <button class="dropdown-btn" (click)="toggleMenu()" >Menu</button>
+        <div [ngClass]="{'hidden': !menu, 'dropdown-content': menu}" >
+            <a  href="/flshcard-sets" >My Sets</a>
+            <a href="/public-sets" >Public Sets</a>
+            <a href="/profile" >Profile</a>
+            <p class="dropdown-logout" (click)="signOutUser()" >Logout      (X)</p>
+        </div>
+    </div>
 </div>

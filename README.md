@@ -25,3 +25,11 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+<!-- Commit message:
+- gitignore was upadted and environment was updated to be public
+- removed phone number from signup form in the portal component
+- Updated portal to be responsive, showing highlights for login and signup form toggles. 
+- Updated the header component with a new style and a menu that appears if the user is logged in.
+- Updated the app and header component to read the id_token from local storage.
+ -->
