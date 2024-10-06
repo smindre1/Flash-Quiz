@@ -1,0 +1,24 @@
+.page {
+    margin: 0 0 0 100px;
+}
+
+.group-btn {
+    cursor: pointer;
+    padding: 5px 10px;
+    margin: 0px;
+    width: 250px;
+}
+
+.group-btn:hover {
+    border: black solid 2px;
+    padding: 3px 8px;
+}
+
+.highlight {
+    background-color: aquamarine;
+}
+
+.group-list {
+    border: #ddd solid 4px;
+    width: fit-content;
+}

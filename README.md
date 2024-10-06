@@ -27,9 +27,8 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
 
 <!-- Commit message:
-- gitignore was upadted and environment was updated to be public
-- removed phone number from signup form in the portal component
-- Updated portal to be responsive, showing highlights for login and signup form toggles. 
-- Updated the header component with a new style and a menu that appears if the user is logged in.
-- Updated the app and header component to read the id_token from local storage.
+
+I added a new component to display the user flashcard set that is selected.
+
+I updated the user-sets component so that it will now only make the initializing (ngOnInit()) request once it has the necessary endpoint data from the user token. As well as only requesting the user token data once local storage has been rendered, and not before (this change was made to prevent error message spam).
  -->

@@ -1,0 +1,7 @@
+<section class="page">
+    <app-card-set-form></app-card-set-form>
+    <div class="group-list">
+        <p id="{{set._id}}" [ngClass]="{'highlight': set._id === selected}" class="group-btn" (click)="thing($event)" *ngFor="let set of flashcardSets">{{set.title}}</p>
+    </div>
+    <app-display-card-set *ngIf="selected != ''" [name]="selected" [user]="userId"></app-display-card-set>
+</section>

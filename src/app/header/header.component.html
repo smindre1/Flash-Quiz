@@ -8,7 +8,7 @@
     <div *ngIf="loggedIn" class="dropdown">
         <button class="dropdown-btn" (click)="toggleMenu()" >Menu</button>
         <div [ngClass]="{'hidden': !menu, 'dropdown-content': menu}" >
-            <a  href="/flshcard-sets" >My Sets</a>
+            <a  href="/flashcard-sets" >My Sets</a>
             <a href="/public-sets" >Public Sets</a>
             <a href="/profile" >Profile</a>
             <p class="dropdown-logout" (click)="signOutUser()" >Logout      (X)</p>

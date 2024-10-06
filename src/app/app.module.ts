@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { HeaderComponent } from './header/header.component';
 import { PortalComponent } from './portal/portal.component';
+import { CardSetFormComponent } from './card-set-form/card-set-form.component';
+import { UserSetsComponent } from './user-sets/user-sets.component';
+import { DisplayCardSetComponent } from './display-card-set/display-card-set.component';
 // import AuthService from '../../utils/auth';
 
 @NgModule({
@@ -14,7 +17,10 @@ import { PortalComponent } from './portal/portal.component';
     AppComponent,
     QuizComponent,
     HeaderComponent,
-    PortalComponent
+    PortalComponent,
+    CardSetFormComponent,
+    UserSetsComponent,
+    DisplayCardSetComponent
   ],
   imports: [
     BrowserModule,
