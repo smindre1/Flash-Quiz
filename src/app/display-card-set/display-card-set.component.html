@@ -1,5 +1,11 @@
 <section>
     <h2>{{title}}</h2>
     <p>Cards: {{size}}</p>
-    <p></p>
+    <div class="flashcard" (keydown)="flipCard($event)" tabindex="0" #cardDiv>
+        <p *ngIf="cardArray.length != 0 && displayFront" (click)="flipCard()">{{cardArray[displayCard].question}}</p>
+        <p *ngIf="cardArray.length != 0 && !displayFront" (click)="flipCard()" tabindex="0">{{cardArray[displayCard].answer}}</p>
+    </div>
+    <button *ngIf="size > 0" (click)="changeCard('Prev')">Prev</button>
+    <button *ngIf="size > 0" (click)="changeCard('Next')">Next</button>
+    <app-card-form [name]="name" [user]="user"></app-card-form>
 </section>

@@ -48,7 +48,7 @@ export class CardSetFormComponent {
     })
     .catch(error => {
       // Handle any errors that occur during the fetch
-      console.error('There was a problem with making the reservation:', error);
+      console.error('There was a problem making the flashcard set:', error);
     });
   }
 

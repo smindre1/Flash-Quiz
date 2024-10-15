@@ -1,0 +1,9 @@
+.flashcard {
+    width: 500px;
+    height: 250px;
+    border: solid 1px #bebebe;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

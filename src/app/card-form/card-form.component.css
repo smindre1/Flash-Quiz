@@ -1,0 +1,23 @@
+textarea {
+    resize: none;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0 0 0;
+}
+
+.form-field {
+    margin: 5px 0;
+    width: 450px;
+}
+
+.error-txt {
+    color: #a00303;
+    margin: none;
+}
+
+.submit-btn {
+    width: 60px;
+}

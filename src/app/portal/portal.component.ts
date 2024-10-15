@@ -19,7 +19,6 @@ export class PortalComponent {
 
   changeToggle(key: string): void {
     this.toggle = key;
-    console.log(this.toggle);
   }
 
   checkForm(): boolean {

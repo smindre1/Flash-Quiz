@@ -10,6 +10,7 @@ import { PortalComponent } from './portal/portal.component';
 import { CardSetFormComponent } from './card-set-form/card-set-form.component';
 import { UserSetsComponent } from './user-sets/user-sets.component';
 import { DisplayCardSetComponent } from './display-card-set/display-card-set.component';
+import { CardFormComponent } from './card-form/card-form.component';
 // import AuthService from '../../utils/auth';
 
 @NgModule({
@@ -20,7 +21,8 @@ import { DisplayCardSetComponent } from './display-card-set/display-card-set.com
     PortalComponent,
     CardSetFormComponent,
     UserSetsComponent,
-    DisplayCardSetComponent
+    DisplayCardSetComponent,
+    CardFormComponent
   ],
   imports: [
     BrowserModule,
