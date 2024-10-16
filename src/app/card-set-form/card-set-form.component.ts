@@ -33,7 +33,7 @@ export class CardSetFormComponent {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({title: this.title, userId: this.userId, questions: []}) // Convert data to JSON format
+      body: JSON.stringify({title: this.title, userId: this.userId, public: false, questions: []}) // Convert data to JSON format
     })
     .then(response => {
       // Check if the response is successful

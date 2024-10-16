@@ -28,7 +28,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 <!-- Commit message:
 Ver [Prior] => [Update]
-Ver [0.0.3] => [0.0.4]
-I made the component card-form.
-
+Ver [0.0.5] => [0.0.6]
+Adding public view buttons.
+Fixing the card flip on the display card set component.
  -->

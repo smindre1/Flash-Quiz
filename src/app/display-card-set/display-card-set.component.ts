@@ -43,7 +43,7 @@ export class DisplayCardSetComponent {
         this.size = data[0].questions.length;
         this.setId = data[0]._id;
         this.cardArray = data[0].questions;
-        console.log("test: ", this.cardArray);
+        // console.log("test: ", this.cardArray);
     })
     .catch(error => {
         console.error('There was a problem with the fetch operation:', error);
@@ -60,10 +60,12 @@ export class DisplayCardSetComponent {
 
   flipCard(event?: KeyboardEvent): void {
     if(event) {
-      console.log(event);
-      console.log(event.code);
+      // console.log(event);
+      // console.log(event.code);
       event.code === "Space" ? this.displayFront = !this.displayFront : null;
     }
+    // console.log("check");
+
     if(!event) {
       this.displayFront = !this.displayFront;
     }
