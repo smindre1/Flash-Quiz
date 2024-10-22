@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, SimpleChanges } from '@angular/core';
 import { environment } from '../../environments/environment';
 
 interface CardObject {
@@ -15,8 +15,9 @@ interface CardObject {
   styleUrl: './display-card-set.component.css'
 })
 export class DisplayCardSetComponent {
-  @Input() name!: string; //name is the flashcard set identifier
-  @Input() user!: string //user id
+  @Input() name!: string; //name is the flashcard set identifier.
+  @Input() user!: string; //user id.
+  @Input() mode!: string; // Displays either an edit or study mode (edit mode displays a button toggle that allows for editing individual cards).
 
   title: string = "";
   size: number = 0;
@@ -24,12 +25,17 @@ export class DisplayCardSetComponent {
   cardArray: CardObject[] = [];
   displayCard: number = 0;
   displayFront: boolean = true;
+  editMode: boolean = false;
+  // 'question' and 'answer' are for the textarea values when editing the flashcard.
+  question: string = "";
+  answer: string = "";
+
 
 
   loadData(): void {
     const url = environment.DB_URL + "flashcards/set/" + this.user + "/"+ this.name;
     fetch(url)
-    //Checks if the responding data is ok
+    //Checks if the responding data is ok.
     .then(response => {
         if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -43,7 +49,7 @@ export class DisplayCardSetComponent {
         this.size = data[0].questions.length;
         this.setId = data[0]._id;
         this.cardArray = data[0].questions;
-        // console.log("test: ", this.cardArray);
+        console.log("test: ", this.cardArray);
     })
     .catch(error => {
         console.error('There was a problem with the fetch operation:', error);
@@ -54,7 +60,12 @@ export class DisplayCardSetComponent {
     this.loadData()
   }
 
-  ngOnChanges():void {
+  ngOnChanges(changes: SimpleChanges):void {
+    if(changes['name']) {
+      this.editMode = false;
+      this.displayCard = 0;
+      this.displayFront = true;
+    }
     this.loadData()
   }
 
@@ -72,9 +83,9 @@ export class DisplayCardSetComponent {
   }
 
   changeCard(direction: string): void {
-    // Resets to the front of the card when switching
+    // Resets to the front of the card when switching.
     this.displayFront = true;
-    //Checks the direction for next card and adjusts displayCard number
+    //Checks the direction for next card and adjusts displayCard number.
     if(direction === "Prev") {
       if(this.displayCard <= 0) {
         this.displayCard = (this.size - 1);
@@ -89,6 +100,43 @@ export class DisplayCardSetComponent {
         this.displayCard = this.displayCard + 1;
       }
     }
+  }
+
+  editToggle(): void {
+    this.editMode = !this.editMode;
+    // Updates 'question' and 'answer' variables with currently displayed flashcard values.
+    this.editMode === true ? (this.question = this.cardArray[this.displayCard].question, this.answer = this.cardArray[this.displayCard].answer) : null;
+  }
+
+  saveEdits(): void {
+    let url = environment.DB_URL + "flashcards/edit-card/" + this.user + "/"+ this.name + "/" + this.cardArray[this.displayCard]._id;
+    // if(!this.questionError && !this.answerError) {
+      fetch(url, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({question: this.question, answer: this.answer}) // Convert data to JSON format
+      })
+      .then(response => {
+        // Check if the response is successful
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        if (response.ok) {
+          this.editMode = false;
+        }
+        return response.json(); // Parse the JSON response
+      })
+      // .then(data => {
+      //   // Work with the JSON response data to do a status check
+      //   console.log("Response data:", data);
+      // })
+      .catch(error => {
+        // Handle any errors that occur during the fetch
+        console.error('There was a problem making the flashcard:', error);
+      });
+    // }
   }
 
 }

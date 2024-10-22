@@ -29,6 +29,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 <!-- Commit message:
 Ver [Prior] => [Update]
 Ver [0.0.5] => [0.0.6]
-Adding public view buttons.
-Fixing the card flip on the display card set component.
+I added a password view toggle to the login and signup forms.
+
  -->

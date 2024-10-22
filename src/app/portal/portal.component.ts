@@ -13,6 +13,7 @@ export class PortalComponent {
   email: string = '';
   emailError: boolean = false;
   password: string = '';
+  hidePassword: boolean = true;
   passwordError: boolean = false;
   toggle: string = 'signup';
   success: boolean = false;

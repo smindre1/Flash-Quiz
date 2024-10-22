@@ -32,7 +32,7 @@ export class CardFormComponent {
       } else {
         this.answerError = false;
       }
-      // If fields
+      // If fields are filled then runthe PUT fetch reqeust
       if(!this.questionError && !this.answerError) {
         fetch(url, {
           method: 'PUT',
@@ -45,6 +45,11 @@ export class CardFormComponent {
           // Check if the response is successful
           if (!response.ok) {
             throw new Error('Network response was not ok');
+          }
+          if(response.ok) {
+            // Resets the form inputs
+            this.question = "";
+            this.answer = "";
           }
           return response.json(); // Parse the JSON response
         })
