@@ -28,7 +28,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 <!-- Commit message:
 Ver [Prior] => [Update]
-Ver [0.0.5] => [0.0.6]
-I added a password view toggle to the login and signup forms.
+Ver [0.0.6] => [0.0.7]
+
 
  -->

@@ -18,7 +18,7 @@ export class UserSetsComponent {
 
   ngOnInit(): void {
     if (typeof window !== 'undefined' && window.localStorage) {
-      !authService.loggedIn() ? document.location.href = '/login%2Bsignup' : null;
+      !authService.loggedIn() ? document.location.href = '/auth' : null;
       // Now it's safe to access localStorage
       this.userId = authService.getProfile().data._id;
     }

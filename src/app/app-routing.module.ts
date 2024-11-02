@@ -5,7 +5,7 @@ import { QuizComponent } from './quiz/quiz.component';
 import { UserSetsComponent } from './user-sets/user-sets.component';
 
 const routes: Routes = [
-  { path: 'login+signup', component: PortalComponent },
+  { path: 'auth', component: PortalComponent },
   { path: 'quiz', component: QuizComponent},
   { path: 'flashcard-sets', component: UserSetsComponent }
 ];
