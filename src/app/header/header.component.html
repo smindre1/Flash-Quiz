@@ -4,7 +4,7 @@
         <p *ngIf="loggedIn" >{{profile.username}}</p>
     </div>
 
-    <a *ngIf="!loggedIn" class="header-link" href="/login%2Bsignup">Login/Signup</a>
+    <a *ngIf="!loggedIn" class="header-link" href="/auth">Login/Signup</a>
     <div *ngIf="loggedIn" class="dropdown">
         <button class="dropdown-btn" (click)="toggleMenu()" >Menu</button>
         <div [ngClass]="{'hidden': !menu, 'dropdown-content': menu}" >
