@@ -1,6 +1,9 @@
-<form className="signupForm" autoComplete="off" (ngSubmit)="handleSubmit($event)">
-    <h2 id="signup" [ngClass]="{'highlight': toggle === 'signup'}" (click)="changeToggle('signup')">Signup</h2>
-    <h2 id="login" [ngClass]="{'highlight': toggle === 'login'}" (click)="changeToggle('login')">Login</h2>
+<form class="portal-form" autoComplete="off" (ngSubmit)="handleSubmit($event)">
+  <div class="row">
+    <h2 class="portal-toggle" id="signup" [ngClass]="{'highlight': toggle === 'signup', 'no-highlight': toggle! != 'signup'}" (click)="changeToggle('signup')">Signup</h2>
+    <h2 class="portal-toggle" id="login" [ngClass]="{'highlight': toggle === 'login', 'no-highlight': toggle != 'login'}" (click)="changeToggle('login')">Login</h2>
+  </div>
+  <section>
     <div className="formDiv">
       <div className="flexColumn formSection" *ngIf="toggle === 'signup'" >
         <input className="formFields" type="text" placeholder="Username" autoComplete="off" id="name" [(ngModel)]="name" name="name" />
@@ -25,4 +28,5 @@
       </div>
       <button className="formBtn" type="submit">Submit</button>
     </div>
-  </form>
+  </section>
+</form>

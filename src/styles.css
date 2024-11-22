@@ -5,4 +5,12 @@
     --blizzardBlue: #9fe7f5;
     --lightTangerine: #f7ad19;
     --tangerine: #f27f0c;
+    --lightGrey: #e8e8e8;
+    --medGrey: #cfcfcf;
+    --paleBlue: #7090b5;
+    --baseBlue: #263c79;
+}
+
+.row {
+    display: flex;
 }

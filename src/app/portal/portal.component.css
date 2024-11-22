@@ -1,7 +1,3 @@
-.highlight {
-    color: aquamarine;
-}
-
 .public-btn-img {
     width: 20px;
 }
@@ -23,3 +19,39 @@
     cursor: pointer;
     padding: 3px 0 0 6px;
 }
+
+.portal-form {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    padding: 20px 10vw;
+    border: solid 2px var(--lightGrey);
+    border-radius: 15px;
+    background-color: #f9f9f9;
+    /* background-color: aquamarine; */
+}
+
+.portal-toggle {
+    cursor: pointer;
+    width: fit-content;
+    padding: 0 12px;
+}
+
+.highlight {
+    color: var(--baseBlue);
+}
+
+.no-highlight {
+    color: var(--medGrey);
+}
+
+.portal-toggle:hover {
+    color: var(--paleBlue);
+}
+
+/* .portal-toggle::selection {
+    color: bisque;
+} */

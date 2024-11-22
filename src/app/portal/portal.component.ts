@@ -50,7 +50,6 @@ export class PortalComponent {
       const userFormData = this.toggle === 'signup' ? { username: this.name, email: this.email, password: this.password } : { email: this.email, password: this.password };
 
       let url = environment.DB_URL + "users/";
-      console.log("Origin URL: ", url);
       this.toggle === 'login' ? url = url + 'login' : null;
       fetch(url, {
         method: 'POST',
