@@ -23,6 +23,8 @@
 .portal-form {
     display: flex;
     position: absolute;
+    left: 34%;
+    top: 25%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -37,7 +39,14 @@
 .portal-toggle {
     cursor: pointer;
     width: fit-content;
-    padding: 0 12px;
+}
+
+.brk {
+    margin: 0.83em 0 0.83em 24px;
+}
+
+.sml {
+    width: 180px;
 }
 
 .highlight {
@@ -51,6 +60,29 @@
 .portal-toggle:hover {
     color: var(--paleBlue);
 }
+
+.form-btn {
+    cursor: pointer;
+    margin: 12px 0 0 48px;
+    color: var(--blizzardBlue);
+    background-color: var(--baseBlue);
+    border: solid var(--paleBlue) 3px;
+    border-radius: 4px;
+}
+
+.form-btn:hover {
+    color: var(--bostonBlue);
+}
+
+.form-field {
+    margin: 0 0 4px 0;
+}
+
+.error-txt {
+    margin: 0 0 8px 0;
+    color: var(--tangerine);
+}
+
 
 /* .portal-toggle::selection {
     color: bisque;

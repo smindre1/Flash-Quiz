@@ -11,6 +11,23 @@
     --baseBlue: #263c79;
 }
 
+body {
+    background-color: var(--prussianBlue);
+}
+
+.wh {
+    color: var(--lightGrey)
+}
+
 .row {
     display: flex;
 }
+
+/* 
+light green:
+#91a86a
+
+dark greens:
+#19846d 
+#156050
+*/

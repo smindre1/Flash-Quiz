@@ -29,6 +29,7 @@ export class DisplayCardSetComponent {
   // 'question' and 'answer' are for the textarea values when editing the flashcard.
   question: string = "";
   answer: string = "";
+  toggle: string = "display";
 
 
 
@@ -106,6 +107,10 @@ export class DisplayCardSetComponent {
     this.editMode = !this.editMode;
     // Updates 'question' and 'answer' variables with currently displayed flashcard values.
     this.editMode === true ? (this.question = this.cardArray[this.displayCard].question, this.answer = this.cardArray[this.displayCard].answer) : null;
+  }
+
+  displayToggle(): void {
+    this.toggle === "display" ? this.toggle = "new-card" : this.toggle = "display";
   }
 
   saveEdits(): void {

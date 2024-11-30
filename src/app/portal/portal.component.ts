@@ -15,7 +15,7 @@ export class PortalComponent {
   password: string = '';
   hidePassword: boolean = true;
   passwordError: boolean = false;
-  toggle: string = 'signup';
+  toggle: string = 'login';
   success: boolean = false;
 
   changeToggle(key: string): void {

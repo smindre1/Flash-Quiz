@@ -3,14 +3,15 @@
         <app-card-set-form></app-card-set-form>
         <div class="group-list">
             <div class="set-div" *ngFor="let set of flashcardSets">
-                <p id="{{set._id}}" [ngClass]="{'highlight': set._id === selected}" class="group-btn" (click)="highlightSet($event)" >{{set.title}}</p>
-                <button class="public-btn" id="{{set._id}}" [attr.public]="set.public" (click)="publicToggle($event)">
-                    <img class="public-btn-img" *ngIf="!set.public" src="assets/eye-closed.png" alt="(private)">
-                    <img class="public-btn-img" *ngIf="set.public" src="assets/eye-open.png" alt="(public)">
-                </button>
+                <section class="row set-selector" (click)="highlightSet($event)">
+                    <p id="{{set._id}}" [ngClass]="{'highlight': set._id === selected}" class="group-btn wh"  >{{set.title}}</p>
+                    <button class="public-btn" id="{{set._id}}" [attr.public]="set.public" (click)="publicToggle($event)">
+                        <img class="public-btn-img" *ngIf="!set.public" src="assets/lock-closed.png" alt="(private)">
+                        <img class="public-btn-img" *ngIf="set.public" src="assets/lock-open.png" alt="(public)">
+                    </button>
+                </section>
+                <app-display-card-set *ngIf="selected === set._id" [name]="set._id" [user]="userId" mode="edit"></app-display-card-set>
             </div>
-
         </div>
     </div>
-    <app-display-card-set *ngIf="selected != ''" [name]="selected" [user]="userId" mode="edit"></app-display-card-set>
 </section>

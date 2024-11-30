@@ -28,7 +28,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 <!-- Commit message:
 Ver [Prior] => [Update]
-Ver [0.0.6] => [0.0.7]
+Ver [0.0.7] => [0.0.8]
+My Sets page layout and style reworked.
 
 
  -->

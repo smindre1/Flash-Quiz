@@ -1,32 +1,33 @@
 <form class="portal-form" autoComplete="off" (ngSubmit)="handleSubmit($event)">
-  <div class="row">
-    <h2 class="portal-toggle" id="signup" [ngClass]="{'highlight': toggle === 'signup', 'no-highlight': toggle! != 'signup'}" (click)="changeToggle('signup')">Signup</h2>
+  <div class="row sml">
     <h2 class="portal-toggle" id="login" [ngClass]="{'highlight': toggle === 'login', 'no-highlight': toggle != 'login'}" (click)="changeToggle('login')">Login</h2>
+    <h2 class="portal-toggle brk" id="signup" [ngClass]="{'highlight': toggle === 'signup', 'no-highlight': toggle! != 'signup'}" (click)="changeToggle('signup')">Signup</h2>
+
   </div>
   <section>
-    <div className="formDiv">
-      <div className="flexColumn formSection" *ngIf="toggle === 'signup'" >
-        <input className="formFields" type="text" placeholder="Username" autoComplete="off" id="name" [(ngModel)]="name" name="name" />
-        <p className="errorTxt hide" *ngIf="nameError">Username cannot be blank</p>
+    <div>
+      <div *ngIf="toggle === 'signup'" >
+        <input class="form-field" type="text" placeholder="Username" autoComplete="off" id="name" [(ngModel)]="name" name="name" />
+        <p class="error-txt" *ngIf="nameError">Username cannot be blank</p>
       </div>
 
-      <div className="flexColumn formSection">
-        <input className="formFields" type="text" placeholder="Email" autoComplete="off" id="email" [(ngModel)]="email" name="email" />
-        <p className="errorTxt hide" *ngIf="emailError">Email cannot be blank</p>
+      <div>
+        <input class="form-field" type="text" placeholder="Email" autoComplete="off" id="email" [(ngModel)]="email" name="email" />
+        <p class="error-txt" *ngIf="emailError">Email cannot be blank</p>
       </div>
     </div>
-    <div className="flexColumn">
-      <div className="flexColumn">
+    <div>
+      <div>
         <section class="flex-row">
-          <input className="formFields" [type]="hidePassword ? 'password' : 'text'" placeholder="Password" autoComplete="off" id="password" [(ngModel)]="password" name="password" />
+          <input class="form-field" [type]="hidePassword ? 'password' : 'text'" placeholder="Password" autoComplete="off" id="password" [(ngModel)]="password" name="password" />
           <button type="button" class="password-btn" (click)="hidePassword = !hidePassword">
             <img class="btn-img" *ngIf="hidePassword" src="assets/eye-closed.png" alt="(private)">
             <img class="btn-img" *ngIf="!hidePassword" src="assets/eye-open.png" alt="(public)">
           </button>
         </section>
-        <p className="errorTxt hide" *ngIf="passwordError">Password cannot be blank</p>
+        <p class="error-txt" *ngIf="passwordError">Password cannot be blank</p>
       </div>
-      <button className="formBtn" type="submit">Submit</button>
+      <button class="form-btn" type="submit">Submit</button>
     </div>
   </section>
 </form>
