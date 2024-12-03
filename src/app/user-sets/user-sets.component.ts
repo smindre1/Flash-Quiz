@@ -12,7 +12,7 @@ interface Group {_id: string; title: string; public: boolean}
 
 export class UserSetsComponent {
   url: string = environment.DB_URL + "flashcards";
-  userId: string = "";
+  userId: string = '';
   selected: string = '';
   flashcardSets: Group[] = [];
 
@@ -50,7 +50,7 @@ export class UserSetsComponent {
 
   highlightSet(e: Event): void {
     const button = e.target as HTMLButtonElement;
-    this.selected = button.id;
+    this.selected === button.id ? this.selected = '' : this.selected = button.id;
   }
 
   publicToggle(e: Event): void {

@@ -1,0 +1,15 @@
+.title {
+    display: flex;
+    justify-content: center;
+    margin: 20vh 0 0 0;
+    color: var(--lightGrey);
+    font-size: 120px;
+    text-shadow: 5px 5px 35px var(--blizzardBlue);
+}
+
+.author {
+    display: flex;
+    justify-content: center;
+    color: var(--lightGrey);
+    font-weight: 700;
+}

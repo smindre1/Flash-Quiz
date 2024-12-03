@@ -5,7 +5,7 @@
             <div class="set-div" *ngFor="let set of flashcardSets">
                 <section class="row set-selector" (click)="highlightSet($event)">
                     <p id="{{set._id}}" [ngClass]="{'highlight': set._id === selected}" class="group-btn wh"  >{{set.title}}</p>
-                    <button class="public-btn" id="{{set._id}}" [attr.public]="set.public" (click)="publicToggle($event)">
+                    <button [ngClass]="{'highlight': set._id === selected, 'clear': set._id != selected}" class="public-btn" id="{{set._id}}" [attr.public]="set.public" (click)="publicToggle($event)">
                         <img class="public-btn-img" *ngIf="!set.public" src="assets/lock-closed.png" alt="(private)">
                         <img class="public-btn-img" *ngIf="set.public" src="assets/lock-open.png" alt="(public)">
                     </button>

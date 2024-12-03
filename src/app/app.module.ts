@@ -11,6 +11,7 @@ import { CardSetFormComponent } from './card-set-form/card-set-form.component';
 import { UserSetsComponent } from './user-sets/user-sets.component';
 import { DisplayCardSetComponent } from './display-card-set/display-card-set.component';
 import { CardFormComponent } from './card-form/card-form.component';
+import { HomeComponent } from './home/home.component';
 // import AuthService from '../../utils/auth';
 
 @NgModule({
@@ -22,7 +23,8 @@ import { CardFormComponent } from './card-form/card-form.component';
     CardSetFormComponent,
     UserSetsComponent,
     DisplayCardSetComponent,
-    CardFormComponent
+    CardFormComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

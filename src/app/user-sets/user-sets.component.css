@@ -1,6 +1,6 @@
 .page {
     display: flex;
-    margin: 0 0 0 100px;
+    margin: 48px 0 0 100px;
 }
 
 .break {
@@ -21,12 +21,13 @@
 } */
 
 .highlight {
+    background-color: initial;
     background-color: var(--bostonBlue);
     color: black;
 }
 
 .group-list {
-    border: var(--paleBlue) solid 4px;
+    /* border: var(--paleBlue) solid 4px; */
     background-color: var(--baseBlue);
     /* width: 80vw;
     min-width: fit-content; */
@@ -40,21 +41,22 @@
 .set-selector {
     width: 80vw;
     min-width: fit-content;
+    border-bottom: var(--paleBlue) solid 2px;
 }
 
 .set-selector:hover {
     background-color: var(--paleBlue);
+    border-bottom: var(--blizzardBlue) solid 2px;
 }
 
 .public-btn {
-    background-color: unset;
     border: none;
     cursor: pointer;
     padding: 2px;
     /* width: 20px; */
 }
 
-.public-btn:hover {
+.clear {
     background-color: unset;
 }
 

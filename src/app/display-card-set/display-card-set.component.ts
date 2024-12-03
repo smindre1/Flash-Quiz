@@ -50,7 +50,7 @@ export class DisplayCardSetComponent {
         this.size = data[0].questions.length;
         this.setId = data[0]._id;
         this.cardArray = data[0].questions;
-        console.log("test: ", this.cardArray);
+        // console.log("test: ", this.cardArray);
     })
     .catch(error => {
         console.error('There was a problem with the fetch operation:', error);

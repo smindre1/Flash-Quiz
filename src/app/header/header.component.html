@@ -1,7 +1,7 @@
 <div class="header">
     <div class="flex-row">
         <a class="header-link" href="/">Home</a>
-        <p *ngIf="loggedIn" >{{profile.username}}</p>
+        <p class="username" *ngIf="loggedIn" >{{profile.username}}</p>
     </div>
 
     <a *ngIf="!loggedIn" class="header-link" href="/auth">Login/Signup</a>
