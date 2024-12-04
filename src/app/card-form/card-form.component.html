@@ -1,5 +1,5 @@
 <form class="form" autoComplete="off" (ngSubmit)="createFlashcard($event)">
-    <h2>Make A New Flashcard For This Set:</h2>
+    <h2 class="wh">Make A New Flashcard For This Set:</h2>
     <textarea class="form-field" placeholder="Front [Write Your Question]" rows="6" cols="60" autoComplete="off" id="question" [(ngModel)]="question" name="question"></textarea>
     <p class="error-txt" *ngIf="questionError">*Please add text to submit</p>
     <textarea class="form-field" placeholder="Back [Write Your Answer]" rows="6" cols="60" autoComplete="off" id="answer" [(ngModel)]="answer" name="answer"></textarea>

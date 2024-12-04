@@ -1,20 +1,22 @@
-<section>
+<section class="card-display">
     <section *ngIf="toggle === 'display'">
-        <h2>{{title}}</h2>
-        <p>Cards: {{size}}</p>
-        <div *ngIf="size > 0 && editMode === false" class="flashcard" (click)="flipCard()" (keydown)="flipCard($event)" tabindex="0" #cardDiv>
-            <p *ngIf="cardArray.length != 0 && displayFront" >{{cardArray[displayCard].question}}</p>
-            <p *ngIf="cardArray.length != 0 && !displayFront" >{{cardArray[displayCard].answer}}</p>
-        </div>
-        <div *ngIf="mode == 'edit' && editMode === true">
-            <textarea class="form-field" placeholder="Front [Write Your Question]" rows="6" cols="60" autoComplete="off" id="question" [(ngModel)]="question" name="question"></textarea>
-            <textarea class="form-field" placeholder="Back [Write Your Answer]" rows="6" cols="60" autoComplete="off" id="answer" [(ngModel)]="answer" name="answer"></textarea>
-        </div>
-        <button *ngIf="size > 1 && editMode === false" (click)="changeCard('Prev')" type="button">Prev</button>
-        <button *ngIf="size > 1 && editMode === false" (click)="changeCard('Next')" type="button">Next</button>
-        <button *ngIf="size > 0 && mode == 'edit'" (click)="editToggle()" type="button">Edit Card</button>
-        <button *ngIf="mode == 'edit' && editMode === true" (click)="saveEdits()" type="button">Save Edits</button>
+        <h2 class="wh">{{title}}</h2>
+        <p class="wh">Cards: {{size}}</p>
+        <section class="slide-view">
+            <div *ngIf="size > 0 && editMode === false" class="flashcard" (click)="flipCard()" (keydown)="flipCard($event)" tabindex="0" #cardDiv>
+                <p *ngIf="cardArray.length != 0 && displayFront" >{{cardArray[displayCard].question}}</p>
+                <p *ngIf="cardArray.length != 0 && !displayFront" >{{cardArray[displayCard].answer}}</p>
+            </div>
+            <div *ngIf="mode == 'edit' && editMode === true">
+                <textarea class="form-field" placeholder="Front [Write Your Question]" rows="6" cols="60" autoComplete="off" id="question" [(ngModel)]="question" name="question"></textarea>
+                <textarea class="form-field" placeholder="Back [Write Your Answer]" rows="6" cols="60" autoComplete="off" id="answer" [(ngModel)]="answer" name="answer"></textarea>
+            </div>
+            <button class="prev-btn" *ngIf="size > 1 && editMode === false" (click)="changeCard('Prev')" type="button">◀</button>
+            <button class="next-btn" *ngIf="size > 1 && editMode === false" (click)="changeCard('Next')" type="button">▶</button>
+        </section>
+        <button class="btn" *ngIf="size > 0 && mode == 'edit'" (click)="editToggle()" type="button">{{editMode ? 'Cancel' : 'Edit Card'}}</button>
+        <button class="btn" *ngIf="mode == 'edit' && editMode === true" (click)="saveEdits()" type="button">Save Edits</button>
     </section>
     <app-card-form *ngIf="toggle === 'new-card'" [name]="name" [user]="user"></app-card-form>
-    <button (click)="displayToggle()" >{{toggle === "display" ? 'Add Card' : 'Cancel'}}</button>
+    <button class="btn" (click)="displayToggle()" *ngIf="mode == 'edit' && editMode === false" >{{toggle === "display" ? 'Add Card' : 'Cancel'}}</button>
 </section>

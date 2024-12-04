@@ -1,9 +1,55 @@
 .flashcard {
     width: 500px;
     height: 250px;
-    border: solid 1px #bebebe;
+    border: solid 1px var(--medGrey);
     padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--lightGrey);
 }
+
+.card-display {
+    margin: 0 0 48px 36px;
+}
+
+.btn {
+    background-color: var(--blizzardBlue);
+    cursor: pointer;
+    border: solid var(--prussianBlue) 1px;
+}
+
+.slide-view {
+    position: relative;
+    width: fit-content;
+}
+
+.prev-btn {
+    position: absolute;
+    font-size: 36px;
+    left: 0%;
+    top: 40%;
+    color: var(--blizzardBlue);
+    text-shadow: 2px 2px 5px var(--prussianBlue);
+    background-color: unset;
+    border: none;
+    cursor: pointer;
+}
+
+.next-btn {
+    position: absolute;
+    font-size: 36px;
+    right: 0%;
+    top: 40%;
+    color: var(--blizzardBlue);
+    text-shadow: -2px 2px 5px var(--prussianBlue);
+    background-color: unset;
+    border: none;
+    cursor: pointer;
+}
+
+.next-btn:hover, .prev-btn:hover {
+    color: var(--lightTangerine);
+}
+
+/* <>‹›«»◀▶ */

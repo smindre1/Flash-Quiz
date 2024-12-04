@@ -24,11 +24,12 @@
     background-color: initial;
     background-color: var(--bostonBlue);
     color: black;
+    /* color: var(--tangerine); */
 }
 
 .group-list {
     /* border: var(--paleBlue) solid 4px; */
-    background-color: var(--baseBlue);
+    background-color: var(--blueTwo);
     /* width: 80vw;
     min-width: fit-content; */
 }

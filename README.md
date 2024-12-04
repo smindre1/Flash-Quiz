@@ -28,8 +28,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 <!-- Commit message:
 Ver [Prior] => [Update]
-Ver [0.0.8] => [0.0.9]
-
+Ver [0.0.9] => [0.0.10]
+I updated the user-sets component's appearance, adjusting the background color to a nicer blue. Adjusted the display-card-set's appearance by adjusting font and background colors as well as adjusting button appearances. 
 
 
  -->
