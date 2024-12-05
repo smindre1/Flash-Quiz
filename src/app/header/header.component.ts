@@ -10,7 +10,8 @@ export class HeaderComponent {
   loggedIn: boolean = false;
   menu: boolean = false;
   profile: {email: string; username: string; _id: string} = {email: '', username: '', _id: ''};
-
+  home: boolean = false;
+  portal: boolean = false;
   
 
   toggleMenu(): void {
@@ -24,6 +25,10 @@ export class HeaderComponent {
       AuthService.loggedIn() ? this.loggedIn = true : this.loggedIn = false;
       this.loggedIn ? this.profile = AuthService.getProfile().data : null;
     }
+    //Hides the home button on the homepage
+    window.location.pathname === '/' ? this.home = true : this.home = false;
+    //Hides the home button on the homepage
+    window.location.pathname === '/auth' ? this.portal = true : this.portal = false;
   }
 
   signOutUser(): void {

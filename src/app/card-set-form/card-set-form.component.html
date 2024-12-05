@@ -1,9 +1,7 @@
 <form class="form" autoComplete="off" (ngSubmit)="newSet($event)">
   <div>
-    <div>
-      <input type="text" placeholder="Flashcard Group Title" autoComplete="off" id="title" [(ngModel)]="title" name="title" />
-      <p *ngIf="titleError">Title cannot be blank</p>
-    </div>
-    <button type="submit">Submit</button>
+    <input type="text" placeholder="Flashcard Group Title" autoComplete="off" id="title" [(ngModel)]="title" name="title" />
+    <p *ngIf="titleError">Title cannot be blank</p>
   </div>
+  <button class="submit-btn" type="submit">Add</button>
 </form>

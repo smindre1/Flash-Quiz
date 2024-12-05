@@ -33,6 +33,13 @@ body::-webkit-scrollbar {
     display: flex;
 }
 
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
 /* 
 light green:
 #91a86a

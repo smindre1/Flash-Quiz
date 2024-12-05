@@ -12,20 +12,21 @@
       </div>
 
       <div>
-        <input class="form-field" type="text" placeholder="Email" autoComplete="off" id="email" [(ngModel)]="email" name="email" />
+        <input class="form-field" type="text" placeholder="Email" autoComplete="off" id="email" [(ngModel)]="email" name="email"  (ngModelChange)="updateValue('email')"/>
         <p class="error-txt" *ngIf="emailError">Email cannot be blank</p>
       </div>
     </div>
     <div>
       <div>
         <section class="flex-row">
-          <input class="form-field" [type]="hidePassword ? 'password' : 'text'" placeholder="Password" autoComplete="off" id="password" [(ngModel)]="password" name="password" />
+          <input class="form-field" [type]="hidePassword ? 'password' : 'text'" placeholder="Password" autoComplete="off" id="password" [(ngModel)]="password" name="password" (ngModelChange)="updateValue('password')"/>
           <button type="button" class="password-btn" (click)="hidePassword = !hidePassword">
             <img class="btn-img" *ngIf="hidePassword" src="assets/eye-closed.png" alt="(private)">
             <img class="btn-img" *ngIf="!hidePassword" src="assets/eye-open.png" alt="(public)">
           </button>
         </section>
         <p class="error-txt" *ngIf="passwordError">Password cannot be blank</p>
+        <p class="error-txt" *ngIf="passwordIncorrect">*Password Incorrect</p>
       </div>
       <button class="form-btn" type="submit">Submit</button>
     </div>

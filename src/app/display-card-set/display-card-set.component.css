@@ -17,11 +17,30 @@
     background-color: var(--blizzardBlue);
     cursor: pointer;
     border: solid var(--prussianBlue) 1px;
+    margin: 4px 4px 0 0;
 }
 
 .slide-view {
     position: relative;
     width: fit-content;
+}
+
+.edit-btn {
+    background-color: unset;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 5%;
+    right: 2%;
+    filter: drop-shadow(2px 2px 0px var(--blueTwo));
+}
+
+.edit-btn:hover {
+    filter: drop-shadow(2px 2px 0px var(--tangerine));
+}
+
+.edit-img {
+    width: 24px;
 }
 
 .prev-btn {

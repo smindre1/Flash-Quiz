@@ -7,14 +7,15 @@
                 <p *ngIf="cardArray.length != 0 && displayFront" >{{cardArray[displayCard].question}}</p>
                 <p *ngIf="cardArray.length != 0 && !displayFront" >{{cardArray[displayCard].answer}}</p>
             </div>
-            <div *ngIf="mode == 'edit' && editMode === true">
+            <div class="col" *ngIf="mode == 'edit' && editMode === true">
                 <textarea class="form-field" placeholder="Front [Write Your Question]" rows="6" cols="60" autoComplete="off" id="question" [(ngModel)]="question" name="question"></textarea>
                 <textarea class="form-field" placeholder="Back [Write Your Answer]" rows="6" cols="60" autoComplete="off" id="answer" [(ngModel)]="answer" name="answer"></textarea>
             </div>
             <button class="prev-btn" *ngIf="size > 1 && editMode === false" (click)="changeCard('Prev')" type="button">◀</button>
             <button class="next-btn" *ngIf="size > 1 && editMode === false" (click)="changeCard('Next')" type="button">▶</button>
+            <button class="edit-btn" *ngIf="size > 0 && mode == 'edit'" (click)="editToggle()" type="button"><img class="edit-img" *ngIf="!editMode" src="assets/edit-icon.svg"></button>
         </section>
-        <button class="btn" *ngIf="size > 0 && mode == 'edit'" (click)="editToggle()" type="button">{{editMode ? 'Cancel' : 'Edit Card'}}</button>
+        <button class="btn" *ngIf="editMode" (click)="editToggle()" type="button">Cancel</button>
         <button class="btn" *ngIf="mode == 'edit' && editMode === true" (click)="saveEdits()" type="button">Save Edits</button>
     </section>
     <app-card-form *ngIf="toggle === 'new-card'" [name]="name" [user]="user"></app-card-form>

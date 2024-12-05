@@ -15,11 +15,18 @@ export class PortalComponent {
   password: string = '';
   hidePassword: boolean = true;
   passwordError: boolean = false;
+  passwordIncorrect: boolean = false;
   toggle: string = 'login';
   success: boolean = false;
 
   changeToggle(key: string): void {
     this.toggle = key;
+  }
+
+  updateValue(status: string): void {
+    console.log(status, "status");
+    status === 'password' ? this.passwordError = false : null;
+    status === 'email' ? this.emailError = false : null;
   }
 
   checkForm(): boolean {
@@ -61,24 +68,29 @@ export class PortalComponent {
       .then(response => {
         // Check if the response is successful
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          
+          return response.json().then(data => {throw new Error(data.error);})
+          // throw new Error(response.error);
         }
         return response.json(); // Parse the JSON response
       })
       .then(data => {
         // Work with the JSON response data
-        console.log("Response data", data);
+        // console.log("Response data", data);
         AuthService.login(data.token);
+        console.log("running");
+        // Resets form after successful submission
+        this.name = "";
+        this.email = "";
+        this.password = "";
       })
       .catch(error => {
         // Handle any errors that occur during the fetch
+        error.message === 'Incorrect Password' ? this.passwordIncorrect = true : null;
         console.error('There was a problem with the fetch operation:', error);
       });
 
-      // Resets form after successful submission
-      this.name = "";
-      this.email = "";
-      this.password = "";
+
     }
   }
 }
