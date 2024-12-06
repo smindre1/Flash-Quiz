@@ -1,6 +1,6 @@
 .page {
     display: flex;
-    margin: 48px 0 0 100px;
+    margin: 48px 0 0 5.75vw;
 }
 
 .break {
@@ -12,7 +12,7 @@
     padding: 5px 10px;
     margin: 0px;
     /* width: 250px; */
-    width: 80vw;
+    width: 85vw;
     min-width: fit-content;
 }
 
@@ -65,3 +65,21 @@
     width: 14px;
     padding: 4px 8px 8px 0;
 }
+
+@media only screen and (max-width: 1200px) {
+    .page {
+        margin: 48px 0 0 4vw;
+    }
+    /* .break {
+        margin: 0 15vw 0 0;
+    } */
+  }
+
+@media only screen and (max-width: 690px) {
+    .page {
+        margin: 48px 0 0 1.5vw;
+    }
+    /* .break {
+        margin: 0 15vw 0 0;
+    } */
+  }

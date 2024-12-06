@@ -4,7 +4,7 @@
         <p class="wh">Cards: {{size}}</p>
         <section class="slide-view">
             <div *ngIf="size > 0 && editMode === false" class="flashcard" (click)="flipCard()" (keydown)="flipCard($event)" tabindex="0" #cardDiv>
-                <p *ngIf="cardArray.length != 0 && displayFront" >{{cardArray[displayCard].question}}</p>
+                <p class="flashcard-txt" *ngIf="cardArray.length != 0 && displayFront" >{{cardArray[displayCard].question}}</p>
                 <p *ngIf="cardArray.length != 0 && !displayFront" >{{cardArray[displayCard].answer}}</p>
             </div>
             <div class="col" *ngIf="mode == 'edit' && editMode === true">

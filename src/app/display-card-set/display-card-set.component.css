@@ -9,8 +9,23 @@
     background-color: var(--lightGrey);
 }
 
+.flashcard-txt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    word-break: break-all;
+    /* overflow-wrap: anywhere; */
+    width: 410px;
+    height: 230px;
+}
+
+.form-field {
+    display: flex;
+}
+
 .card-display {
-    margin: 0 0 48px 36px;
+    margin: 0 36px 48px 36px;
 }
 
 .btn {
@@ -71,4 +86,27 @@
     color: var(--lightTangerine);
 }
 
-/* <>‹›«»◀▶ */
+
+@media only screen and (max-width: 690px) {
+    .card-display {
+        margin: 0 12px 48px 4vw;
+    }
+}
+
+@media only screen and (max-width: 612px) {
+    .flashcard {
+        width: 82vw;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .prev-btn, .next-btn {
+        top: 80%
+    }
+    .flashcard-txt {
+        width: unset;
+    }
+    .form-field {
+        width: 82vw;
+    }
+}

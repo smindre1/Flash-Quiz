@@ -38,7 +38,11 @@ body::-webkit-scrollbar {
     flex-direction: column;
 }
 
-
+.cen {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
 
 /* 
 light green:

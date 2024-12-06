@@ -6,6 +6,7 @@ import { environment } from '../../environments/environment';
   selector: 'app-portal',
   templateUrl: './portal.component.html',
   styleUrl: './portal.component.css',
+  host: { 'class': 'cen'}
 })
 export class PortalComponent {
   name: string = '';

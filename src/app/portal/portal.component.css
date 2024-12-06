@@ -23,7 +23,6 @@
 .portal-form {
     display: flex;
     position: absolute;
-    left: 34%;
     top: 25%;
     flex-direction: column;
     justify-content: center;
@@ -63,7 +62,7 @@
 
 .form-btn {
     cursor: pointer;
-    margin: 12px 0 0 48px;
+    margin: 6px 0 0 0;
     color: var(--blizzardBlue);
     background-color: var(--baseBlue);
     border: solid var(--paleBlue) 3px;
@@ -82,8 +81,3 @@
     margin: 0 0 8px 0;
     color: var(--tangerine);
 }
-
-
-/* .portal-toggle::selection {
-    color: bisque;
-} */
